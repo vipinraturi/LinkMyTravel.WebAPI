@@ -1,0 +1,13 @@
+refrence error in unit testing project -- resolved
+allow-cross-platform-error webAPI fix -- resolved
+
+test form from angular js 2 to web api -- in progress
+
+EntityFramework Core database creatioin itself -- hold
+check membership provider in entity core
+unit testing project side by side
+token based authentication on server side
+confirm all pages and fields to make at iteration 1
+social networking site login
+
+

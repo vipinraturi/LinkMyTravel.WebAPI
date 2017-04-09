@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkMyTravel.WebAPI", "LinkMyTravel.WebAPI\LinkMyTravel.WebAPI.csproj", "{596661EA-ED2C-47D4-9968-3FF536E6C06C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7362136F-5E40-4A68-8379-EA380FB7EF27}"
+	ProjectSection(SolutionItems) = preProject
+		TodoList.txt = TodoList.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkMyTravel.Test", "LinkMyTravel.Test\LinkMyTravel.Test.csproj", "{0FDCB453-05CF-4AD1-A9D6-583D750D1C7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{596661EA-ED2C-47D4-9968-3FF536E6C06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596661EA-ED2C-47D4-9968-3FF536E6C06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596661EA-ED2C-47D4-9968-3FF536E6C06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596661EA-ED2C-47D4-9968-3FF536E6C06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FDCB453-05CF-4AD1-A9D6-583D750D1C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDCB453-05CF-4AD1-A9D6-583D750D1C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDCB453-05CF-4AD1-A9D6-583D750D1C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDCB453-05CF-4AD1-A9D6-583D750D1C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
