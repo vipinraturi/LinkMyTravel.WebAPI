@@ -5,9 +5,15 @@ check membership provider in entity core -- done, implemented
 
 test form from angular js 2 to web api -- in progress
 
+
+Membership provider adding extra column
+entity framework core to add master data initially
 unit testing project side by side
 token based authentication on server side
 confirm all pages and fields to make at iteration 1
 social networking site login
+error handling
+error logging
+WebAPI Helper page create
 
 

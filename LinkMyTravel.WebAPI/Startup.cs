@@ -1,6 +1,7 @@
 ﻿using LinkMyTravel.Data;
 using LinkMyTravel.WebAPI.Model;
 using LinkMyTravel.WebAPI.Repositories;
+using LinkMyTravel.WebAPI.Utilities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Cors.Infrastructure;
@@ -10,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace LinkMyTravel.WebAPI
 {
@@ -66,6 +70,8 @@ namespace LinkMyTravel.WebAPI
             //services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()));
         }
 
+        private static readonly string secretKey = "mysupersecret_secretkey!123";
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -73,19 +79,21 @@ namespace LinkMyTravel.WebAPI
             loggerFactory.AddDebug();
             app.UseCors("CorsPolicy");
             app.UseIdentity();
+
+
+            // Add JWT generation endpoint:
+            var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
+            var options = new TokenProviderOptions
+            {
+                Audience = "ExampleAudience",
+                Issuer = "ExampleIssuer",
+                SigningCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256),
+            };
+
+            app.UseMiddleware<TokenProviderMiddleware>(Options.Create(options));
+
+
             app.UseMvc();
-
-            
-            //app.UseCors(builder =>
-            //builder.WithOrigins("http://localhost:50841")
-            //.AllowAnyHeader()
-            //);
-            //var cors = new EnableCorsAttribute("http://localhost:50841", "*", "*");
-            //app.EnableCors(cors);
-            //app.UseApplicationInsightsRequestTelemetry();
-            //app.UseApplicationInsightsExceptionTelemetry();
-            // global policy - assign here or on each controller
-
 
         }
     }
