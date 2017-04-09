@@ -1,9 +1,11 @@
 ﻿using LinkMyTravel.Data;
+using LinkMyTravel.WebAPI.Model;
 using LinkMyTravel.WebAPI.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,7 +43,11 @@ namespace LinkMyTravel.WebAPI
             //services.AddMvc();
 
             services.AddDbContext<LinkMyTravelContext>(options =>
-             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+             options.UseSqlServer(Configuration.GetConnectionString("LinkMyTravelConnection")));
+
+
+            services.AddIdentity<AppUser, IdentityRole>()
+            .AddEntityFrameworkStores<LinkMyTravelContext>();
 
             // Add service and create Policy with options
             services.AddCors(options =>
@@ -66,9 +72,10 @@ namespace LinkMyTravel.WebAPI
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             app.UseCors("CorsPolicy");
+            app.UseIdentity();
             app.UseMvc();
 
-
+            
             //app.UseCors(builder =>
             //builder.WithOrigins("http://localhost:50841")
             //.AllowAnyHeader()

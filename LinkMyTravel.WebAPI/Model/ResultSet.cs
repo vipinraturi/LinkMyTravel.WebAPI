@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace LinkMyTravel.WebAPI.Model
 {
-    public class ResultSet
+    public class ResultSet<T> where T: class
     {
         public String Message { get; set; }
 
@@ -15,6 +15,6 @@ namespace LinkMyTravel.WebAPI.Model
 
         public TodoItem Model { get; set; }
 
-        public IEnumerable<TodoItem> List { get; set; }
+        public IEnumerable<T> List { get; set; }
     }
 }

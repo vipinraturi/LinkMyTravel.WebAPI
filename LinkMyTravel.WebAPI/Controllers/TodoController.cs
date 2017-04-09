@@ -25,7 +25,7 @@ namespace LinkMyTravel.WebAPI.Controllers
         [HttpGet]
         public IEnumerable<TodoItem> GetAll()
         {
-            var response = new ResultSet();
+            var response = new ResultSet<TodoItem>();
             response.Message = "Test";
             try
             {
