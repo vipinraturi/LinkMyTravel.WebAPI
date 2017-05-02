@@ -43,6 +43,33 @@ namespace LinkMyTravel.WebAPI.Controllers
             return response;
         }
 
+
+        [HttpGet("{userName}/{password}", Name = "Login")]
+        public async Task<ResultSet<AppUser>> Login(string userName, string password)
+        {
+            var response = new ResultSet<AppUser>();
+
+            try
+            {
+                var items = _userManager.Users;
+
+                foreach (var item in items)
+                {
+                    if (item.Email == userName)
+                    {
+                        response.User = item;
+                        response.DidError = false;
+                        response.Message = "Success";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response.DidError = true;
+                response.ErrorMessage = ex.Message;
+            }
+            return response;
+        }
         [HttpPost]
         public async Task<ResultSet<AppUser>> Create([FromBody] AppUser item)
         {

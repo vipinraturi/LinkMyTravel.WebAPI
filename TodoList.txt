@@ -2,18 +2,33 @@ refrence error in unit testing project -- resolved
 allow-cross-platform-error webAPI fix -- resolved
 EntityFramework Core database creatioin itself --done
 check membership provider in entity core -- done, implemented
+token based authentication on server side -- done
 
 test form from angular js 2 to web api -- in progress
 
 
+token value set in appsetting.json file.
+Add Generic repository pattern in project
+from typescript, make ajax call with header token included. 
 Membership provider adding extra column
 entity framework core to add master data initially
 unit testing project side by side
-token based authentication on server side
 confirm all pages and fields to make at iteration 1
 social networking site login
-error handling
+error handling page
 error logging
 WebAPI Helper page create
+whatsapp integration 
+mobile message otp integration
 
+
+
+Theme
+https://themeforest.net/item/travelo-travel-tour-booking-html5-template/8346649?ref=SoapTheme
+http://www.soaptheme.net/preview.html?travelo_html
+
+
+https://randthemes.com/register/
+https://randthemes.com/themes/carpooling/events.html#
+http://www.iimjobs.com/registration/login.php
 

@@ -15,6 +15,8 @@ namespace LinkMyTravel.WebAPI.Model
 
         public TodoItem Model { get; set; }
 
+        public AppUser User { get; set; }
+
         public IEnumerable<T> List { get; set; }
     }
 }
